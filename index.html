@@ -14,8 +14,36 @@
     <li><a href="autovermietung.html">Autovermietung</a></li>
     <li><a href="attraktionen.html">Attraktionen</a></li>
   </ul>
+
+  <a href="index.html" class="home-logo">
+  <img src="img/colosseum.png" alt="Home">
+</a>
 </nav>   
     <style>
+        .home-logo {
+            position: absolute;
+            top: 1px;   
+            left: 1px;   
+            display: inline-block;
+        }
+
+        .home-logo img {
+            width: 110px;  
+            height: auto;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        
+        .home-logo img:hover {
+            transform: scale(1.2);
+        }
+
+        .home-logo img:active {
+            transform: scale(0.95);
+        }
+
+        
+
        .main-menu ul {
             list-style: none;
             display: flex;
@@ -47,6 +75,7 @@
 
         .wave {
             position: absolute;
+            margin-top: -70px;
             left: 0;
             top: 0;
             z-index: -1;
@@ -84,7 +113,6 @@
 </head>
 <body>
     <img class="wave"src="img/wave.svg" alt="Rom">
-    <img class="colosseum"src="img/colosseum.png" alt="Kolosseum">
     <img class="rome" src="img/rome.jpg" alt="Rom">
 
 
