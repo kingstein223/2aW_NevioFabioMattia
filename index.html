@@ -6,7 +6,13 @@
     <title>Rom Reisen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <a href="index.html" class="home-logo">
+  <img src="img/colosseum.png" alt="Home">
+  </a>
+ 
+    
     <nav class="main-menu">
   <ul>
     <li><a href="hotel.html">Hotel</a></li>
@@ -15,18 +21,66 @@
     <li><a href="attraktionen.html">Attraktionen</a></li>
   </ul>
 
-  <a href="index.html" class="home-logo">
-  <img src="img/colosseum.png" alt="Home">
-  </a>
-
-
-<iframe style="width: 300px; border: none; height: 260px; position:absolute; top: 450px; right: 20px; background-color: transparent;" src="https://www.wetter.de/widget/heute/sr2yk43y/false/"></iframe><br/>
 
 </nav>
     <style>
-        .
+
+header {
+  position: relative;
+}
+        .weather-widget {
+        width: 300px;
+        height: 260px;
+        border: none;
+        position: absolute;  
+        top: 190px;  
+        right: 10px;    
+        background: transparent;
+        z-index: 20;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));}
 
 
+
+
+        .main-menu {
+        position: absolute;
+        top: 25px;
+        left: 50%;
+           transform: translateX(-50%);
+        z-index: 10;
+        }
+
+        .main-menu ul {
+        list-style: none;
+        display: flex;
+        gap: 22px;
+        margin: 0;
+        padding: 0;
+        }
+
+
+        .main-menu a {
+        display: inline-block;
+        padding: 12px 26px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        border-radius: 999px;
+
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+        transition: all 0.25s ease;
+        }
+        .main-menu a:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+        }
+        .main-menu a:active {
+            transform: translateY(1px) scale(0.97);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
 
         .home-logo {
             position: absolute;
@@ -63,7 +117,7 @@
         }
 
         .main-menu a {
-            font-size: 20px;       
+            font-size: 28px;       
             padding: 10px 20px;     
             color: white;
             text-decoration: none;
@@ -72,8 +126,9 @@
         
         .main-menu a {
             color: white;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 600;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
         }
   
     
@@ -120,6 +175,7 @@
 <body>
     <img class="wave"src="img/wave.svg" alt="Rom">
     <img class="rome" src="img/rome.jpg" alt="Rom">
+    <iframe class="weather-widget"src="https://www.wetter.de/widget/heute/sr2yk43y/false/"></iframe>
 
 
     
