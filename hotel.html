@@ -4,9 +4,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <a href="index.html" class="home-logo">
+  <img src="img/colosseum.png" alt="Home">
+  </a>
+ 
+    
+    <nav class="main-menu">
+  <ul>
+    <li><a href="hotel.html">Hotel</a></li>
+    <li><a href="restaurant.html">Restaurant</a></li>
+    <li><a href="autovermietung.html">Autovermietung</a></li>
+    <li><a href="attraktionen.html">Attraktionen</a></li>
+  </ul>
+
+
+</nav>
+    <style>
+        body{
+        font-family: "Poppins", sans-serif;
+        background:#f7f5f5;
+        margin:0;
+        padding:60px;
+        color:#1d1d1f;
+        }
+
+        .section-title{
+        text-align:center;
+        font-size:48px;
+        font-weight:600;
+        margin-bottom:60px;
+        }
+
+        .hotel-container{
+        display:flex;
+        margin-top:190px;
+        justify-content:center;
+        gap:40px;
+        flex-wrap:wrap;
+        }
+
+        .hotel-card{
+        background:white;
+        width:300px;
+        border-radius:20px;
+        overflow:hidden;
+        box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        transition:all 0.3s ease;
+        cursor:pointer;
+        }
+
+        .hotel-card:hover{
+        transform:translateY(-8px);
+        box-shadow:0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .hotel-image{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+        }
+
+        .hotel-content{
+        padding:24px;
+        }
+
+        .hotel-name{
+        font-size:20px;
+        font-weight:600;
+        margin-bottom:8px;
+        }
+
+        .hotel-location{
+        color:#6e6e73;
+        font-size:14px;
+        margin-bottom:16px;
+        }
+
+        header {
+        position: relative;
+        }
+        
+        .weather-widget {
+        width: 300px;
+        height: 260px;
+        border: none;
+        position: absolute;  
+        top: 190px;  
+        right: 10px;    
+        background: transparent;
+        z-index: 20;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));}
+
+        .main-menu {
+        position: absolute;
+        top: 25px;
+        left: 50%;
+           transform: translateX(-50%);
+        z-index: 10;
+        }
+
+        .main-menu ul {
+        list-style: none;
+        display: flex;
+        gap: 22px;
+        margin: 0;
+        padding: 0;
+        }
+
+        .main-menu a {
+        display: inline-block;
+        padding: 12px 26px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        border-radius: 999px;
+
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+        transition: all 0.25s ease;
+        }
+        .main-menu a:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+        }
+        .main-menu a:active {
+            transform: translateY(1px) scale(0.97);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
+
+        .home-logo {
+            position: absolute;
+            top: 1px;   
+            left: 1px;   
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+        }
+
+        .home-logo img {
+            width: 160px;  
+            height: auto;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        
+        .home-logo img:hover {
+            transform: scale(1.2);
+        }
+
+        .home-logo img:active {
+            transform: scale(0.95);
+        }
+
+        
+
+       .main-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;              
+            justify-content: center; 
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-menu a {
+            font-size: 28px;       
+            padding: 10px 20px;     
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        } 
+        
+        .main-menu a {
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+  
+    
+
+        h1 {
+            color: white;
+        }
+
+        .wave {
+            position: absolute;
+            margin-top: -70px;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+        }
+
+        .colosseum {
+            width: 110px;
+            height: auto;
+            position: absolute;
+            left: 200;
+            top: 10;
+            z-index: -1;
+        }
+
+        .rome {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -2;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        
+    </style>
 </head>
 <body>
-    Hotel
+    <img class="wave"src="img/wave.svg" alt="Rom">
+    
+
+<div class="hotel-container">
+
+<div class="hotel-card">
+<img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/304829193.jpg?k=29d333a428a39554403c6e5620bbb7768ebdd9260a9a9bac610dda5abcc973c3&o=">
+<div class="hotel-content">
+<div class="hotel-name">Hotel Eden</div>
+<div class="hotel-location">Rom, Italien</div>
+</div>
+</div>
+
+
+<div class="hotel-card">
+<img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/654919469.jpg?k=0dff2a5997b8e48dc38b363a356448ee873d287288dd827cd07529a3b0287c39&o=">
+<div class="hotel-content">
+<div class="hotel-name">Hassler Roma</div>
+<div class="hotel-location">Rom, Italien</div>
+</div>
+</div>
+
+
+<div class="hotel-card">
+<img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/816980701.jpg?k=aae2f15b555b545f1a4174e653c532b49f5de5a270bdcbed71916e166f66a740&o=">
+<div class="hotel-content">
+<div class="hotel-name">Rome Cavalieri</div>
+<div class="hotel-location">Rom, Italien</div>
+</div>
+</div>
+
+</div>
+
     
 </body>
 </html>
