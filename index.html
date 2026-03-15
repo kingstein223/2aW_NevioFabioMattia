@@ -25,9 +25,63 @@
 </nav>
     <style>
 
-header {
-  position: relative;
-}
+       .search-container{
+        display:flex;
+        justify-content:center;
+        margin-top:250px;
+        }
+
+        .search-box{
+        position:relative;
+        width:420px;
+        }
+
+        .search-input{
+        width:100%;
+        padding:16px 20px;
+        border-radius:40px;
+        border:none;
+        font-size:16px;
+        background:rgba(255,255,255,0.9);
+        backdrop-filter:transparent(18px);
+        outline:none;
+        }
+
+        .suggestions{
+        position:absolute;
+        top:60px;
+        padding:16px 20px;
+        left:0px;
+        width: 100%;
+        background:white;
+        border-radius:10px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.15);
+        overflow:hidden;
+        display:none;
+        }
+
+        .suggestion-item{
+        padding:4px 8px;
+        cursor:pointer;
+        transition:0.2s;
+        font-family: "Poppins", sans-serif;
+        font-size:15px;
+        transition: all 0.25s ease;
+        text-decoration: none;
+        }
+
+        .suggestion-item:hover{
+        background:#f5f5f7;
+        }
+
+        .suggestion-item:hover {
+            transform: scale(105%);
+        }
+
+        header {
+        position: relative;
+        }
+
         .weather-widget {
         width: 300px;
         height: 260px;
@@ -39,14 +93,11 @@ header {
         z-index: 20;
         filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));}
 
-
-
-
         .main-menu {
         position: absolute;
         top: 25px;
         left: 50%;
-           transform: translateX(-50%);
+        transform: translateX(-50%);
         z-index: 10;
         }
 
@@ -58,7 +109,6 @@ header {
         padding: 0;
         }
 
-
         .main-menu a {
         display: inline-block;
         padding: 12px 26px;
@@ -67,16 +117,16 @@ header {
         color: white;
         text-decoration: none;
         border-radius: 999px;
-
         box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-
         transition: all 0.25s ease;
         }
+        
         .main-menu a:hover {
             transform: translateY(-3px) scale(1.05);
             background: rgba(255, 255, 255, 0.25);
             box-shadow: 0 14px 30px rgba(0,0,0,0.35);
         }
+        
         .main-menu a:active {
             transform: translateY(1px) scale(0.97);
             box-shadow: 0 4px 10px rgba(0,0,0,0.25);
@@ -105,8 +155,6 @@ header {
             transform: scale(0.95);
         }
 
-        
-
        .main-menu ul {
             list-style: none;
             display: flex;
@@ -130,8 +178,6 @@ header {
             font-weight: 500;
             font-style: normal;
         }
-  
-    
 
         h1 {
             color: white;
@@ -177,7 +223,89 @@ header {
     <img class="rome" src="img/rome.jpg" alt="Rom">
     <iframe class="weather-widget"src="https://www.wetter.de/widget/heute/sr2yk43y/false/"></iframe>
 
+    <div class="search-container">
+    
+    <div class="search-box">
+
+    <input 
+    type="text"
+    id="searchInput"
+    class="search-input"
+    placeholder="Was suchst du in Rom?"
+    autocomplete="off"
+    >
 
     
+    <div id="suggestions" class="suggestions"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const pages = [
+{ name: "Hotel", url: "hotel.html" },
+{ name: "Restaurant", url: "restaurant.html" },
+{ name: "Autovermietung", url: "autovermietung.html" },
+{ name: "Attraktionen", url: "attraktionen.html" }
+]
+
+const input = document.getElementById("searchInput")
+const suggestions = document.getElementById("suggestions")
+
+input.addEventListener("input", function(){
+
+let value = input.value.toLowerCase()
+
+suggestions.innerHTML = ""
+
+if(value === ""){
+suggestions.style.display = "none"
+return
+}
+
+let results = pages.filter(p => 
+p.name.toLowerCase().includes(value)
+)
+
+results.forEach(result => {
+
+let div = document.createElement("div")
+div.classList.add("suggestion-item")
+div.textContent = result.name
+
+div.onclick = () => {
+window.location.href = result.url
+}
+
+suggestions.appendChild(div)
+
+})
+
+suggestions.style.display = "block"
+
+})
+
+input.addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+
+let value = input.value.toLowerCase()
+
+let result = pages.find(p => 
+p.name.toLowerCase().includes(value)
+)
+
+if(result){
+window.location.href = result.url
+}
+
+}
+
+})
+
+</script>
+
 </body>
 </html>
